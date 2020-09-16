@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MyCRUDController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('/people', MyCRUDController::class);
