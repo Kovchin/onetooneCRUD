@@ -19,17 +19,9 @@ class MyCRUDController extends Controller
 
         //TODO https://stackoverflow.com/questions/32498142/saving-one-to-one-relation-in-laravel
 
+        $users = User::all();
 
-
-        //Прямое отношение
-
-        $data1 = Phone::findOrFail(2);
-
-        //Обратный вызов
-
-        $data2 = User::findOrFail(1);
-
-        return view('CRUD/index', compact(['data1', 'data2']));
+        return view('CRUD/index', compact('users'));
 
     }
 
