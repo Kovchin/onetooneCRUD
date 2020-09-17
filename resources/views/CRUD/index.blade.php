@@ -10,5 +10,13 @@
 <body>
 <h1>CRUD in Laravel 8</h1>
 
+<img src="{{URL::asset('/img/onetoone.jpg')}}" alt="">
+
+<p>Прямая связь</p>
+{{$data1}}
+
+<p>Обратное отношение</p>
+{{$data2}}
+
 </body>
 </html>

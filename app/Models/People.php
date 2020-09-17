@@ -10,11 +10,14 @@ class People extends Model
 {
     use HasFactory;
 
+    protected $table = 'peoples';
+
     protected $fillable = [
       'name', 'phone_id'
     ];
 
     public function phones(){
-        return $this->belongsTo(Phone::class,'phone_id');
+        return $this->belongsTo(Phone::class,'phone_id','id');
     }
+
 }

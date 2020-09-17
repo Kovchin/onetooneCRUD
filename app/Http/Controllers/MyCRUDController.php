@@ -19,18 +19,16 @@ class MyCRUDController extends Controller
 
         //TODO https://stackoverflow.com/questions/32498142/saving-one-to-one-relation-in-laravel
 
-        $test = new Phone;
-        $test->phone = '00000';
-        $test->save();
+        //Прямое отношение
 
-        echo $test->id;
-//
-        $myPeople = new People;
-        $myPeople->name = 'First';
-        $myPeople->phone_id = $test->id;
-        $myPeople->save();
+        $data1 = Phone::findOrFail(2);
 
-        return view('CRUD\index');
+        //Обратный вызов
+
+        $data2 = People::findOrFail(1);
+
+        return view('CRUD/index', compact(['data1', 'data2']));
+
     }
 
     /**

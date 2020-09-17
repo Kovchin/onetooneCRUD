@@ -10,11 +10,13 @@ class Phone extends Model
 {
     use HasFactory;
 
+    protected $table = 'phones';
+
     protected $fillable = [
       'phone'
     ];
 
     public function peoples(){
-        $this->hasOne(People::class, 'phone_id');
+        $this->hasOne(People::class, 'phone_id','id');
     }
 }
