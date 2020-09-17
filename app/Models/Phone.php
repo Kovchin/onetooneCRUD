@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\People;
 
 class Phone extends Model
 {
@@ -16,7 +15,7 @@ class Phone extends Model
       'phone'
     ];
 
-    public function peoples(){
-        $this->hasOne(People::class, 'phone_id','id');
+    public function myUser(){
+        return $this->belongsTo('App\Models\User','user_id', 'id');
     }
 }

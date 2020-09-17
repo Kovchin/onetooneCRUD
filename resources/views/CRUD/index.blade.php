@@ -10,13 +10,18 @@
 <body>
 <h1>CRUD in Laravel 8</h1>
 
-<img src="{{URL::asset('/img/onetoone.jpg')}}" alt="">
+<img src="{{asset('/img/onetoone.gif')}}" alt="">
 
-<p>Прямая связь</p>
-{{$data1}}
+<p>data1 = </p> {{$data1}}
+<p>data2 = </p> {{$data2}}
 
-<p>Обратное отношение</p>
-{{$data2}}
+<p>Прямой вызов</p>
+
+{{$data1->myUser->name}}
+
+<p>Обратный вызов</p>
+
+{{$data2->myPhone}}
 
 </body>
 </html>

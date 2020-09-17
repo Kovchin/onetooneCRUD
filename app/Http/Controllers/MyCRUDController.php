@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\AbstractList;
 use App\Models\Phone;
-use App\Models\People;
+use App\Models\User;
 
 class MyCRUDController extends Controller
 {
@@ -19,13 +19,15 @@ class MyCRUDController extends Controller
 
         //TODO https://stackoverflow.com/questions/32498142/saving-one-to-one-relation-in-laravel
 
+
+
         //Прямое отношение
 
         $data1 = Phone::findOrFail(2);
 
         //Обратный вызов
 
-        $data2 = People::findOrFail(1);
+        $data2 = User::findOrFail(1);
 
         return view('CRUD/index', compact(['data1', 'data2']));
 
